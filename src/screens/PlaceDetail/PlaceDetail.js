@@ -12,7 +12,7 @@ import { connect } from "react-redux";
 import Icon from "react-native-vector-icons/Ionicons";
 import { deletePlace } from "../../store/actions/index";
 
-class PlaceDetailsScreen extends Component {
+class PlaceDetail extends Component {
   placeDeletedHandler = () => {
     this.props.onDeletePlace(this.props.selectedPlace.key);
     this.props.navigator.pop();
@@ -61,4 +61,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(PlaceDetailsScreen);
+export default connect(null, mapDispatchToProps)(PlaceDetail);

@@ -1,19 +1,18 @@
-import {Navigation} from 'react-native-navigation';
+import { Navigation } from 'react-native-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const startTabs =() =>{
+const startTabs = () => {
     Promise.all([
-        Icon.getImageSource("md-map",30),
-        Icon.getImageSource("ios-share-alt",30),
+        Icon.getImageSource("md-map", 30),
+        Icon.getImageSource("ios-share-alt", 30),
         Icon.getImageSource("ios-menu", 30)
-    
-    ]).then(sources=>{
+    ]).then(sources => {
         Navigation.startTabBasedApp({
-            tabs:[
+            tabs: [
                 {
-                    screen:'prehomer.FindPlaceScreen',
-                    label:'Find Places',
-                    title:'Find Places',
+                    screen: "prehomer.FindPlaceScreen",
+                    label: "Find Place",
+                    title: "Find Place",
                     icon: sources[0],
                     navigatorButtons: {
                         leftButtons: [
@@ -26,9 +25,9 @@ const startTabs =() =>{
                     }
                 },
                 {
-                    screen:'prehomer.SharePlaceScreen',
-                    label:'Share Place',
-                    title:'Share Place',
+                    screen: "prehomer.SharePlaceScreen",
+                    label: "Share Place",
+                    title: "Share Place",
                     icon: sources[1],
                     navigatorButtons: {
                         leftButtons: [
@@ -46,8 +45,8 @@ const startTabs =() =>{
                     screen: "prehomer.SideDrawerScreen"
                 }
             }
-        })
-    })
-    
-}
+        });
+    });
+};
+
 export default startTabs;
